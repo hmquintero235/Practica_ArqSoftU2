@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "fastify": "^5.12.7"
+  },
+  "name": "practica",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "typecheck": "bun check"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^7"
+  }
+}
