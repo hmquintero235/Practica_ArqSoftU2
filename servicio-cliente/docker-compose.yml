@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres-cliente
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: cliente
+      POSTGRES_USER: cliente_user
+      POSTGRES_PASSWORD: TU_PASSWORD
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

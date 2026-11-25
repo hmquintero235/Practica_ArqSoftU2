@@ -1,29 +1,19 @@
-import {DataTypes} from 'sequelize';
-import {sequelize} from '../config/database';
+import { DataTypes } from "sequelize";
+import { sequelize } from "../config/database";
 
- export const Cliente = sequelize.define('Medico', {
+export const Cliente = sequelize.define("Cliente", {
     codigo: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true,
+        autoIncrement: true
     },
-
-    nombre:{
+    nombre: {
         type: DataTypes.STRING,
-        
+        allowNull: false
     },
-    direccion:{
-        type: DataTypes.STRING,
-        
-    },
-    telefono:{
-        type: DataTypes.STRING,
-        
-    }
-}
-   ,{
-    tableName: 'Medico',
+    direccion: DataTypes.STRING,
+    telefono: DataTypes.STRING
+}, {
+    tableName: "clientes",
     timestamps: false
-   }
-
-);
+});

@@ -4,7 +4,7 @@
   "target": "mongo",
   "profileHash": "251b3ce23f6c9f561892e7c1af9d2cc941a13d64ba1aa7226b90036b09568cc3",
   "roots": {
-    "facturas": {
+    "Factura": {
       "model": "Factura",
       "namespace": "__unbound__"
     }
@@ -56,13 +56,6 @@
                   "kind": "scalar"
                 }
               },
-              "id": {
-                "nullable": false,
-                "type": {
-                  "codecId": "mongo/objectId@1",
-                  "kind": "scalar"
-                }
-              },
               "iva": {
                 "nullable": false,
                 "type": {
@@ -87,7 +80,7 @@
             },
             "relations": {},
             "storage": {
-              "collection": "facturas",
+              "collection": "Factura",
               "fields": {
                 "cod_cliente": {
                   "field": "cod_cliente"
@@ -103,9 +96,6 @@
                 },
                 "fecha": {
                   "field": "fecha"
-                },
-                "id": {
-                  "field": "_id"
                 },
                 "iva": {
                   "field": "iva"
@@ -128,7 +118,7 @@
       "__unbound__": {
         "entries": {
           "collection": {
-            "facturas": {
+            "Factura": {
               "indexes": [
                 {
                   "keys": [
@@ -169,9 +159,6 @@
                           "cantidad": {
                             "bsonType": "int"
                           },
-                          "cod_factura": {
-                            "bsonType": "int"
-                          },
                           "cod_producto": {
                             "bsonType": "int"
                           },
@@ -184,7 +171,6 @@
                         },
                         "required": [
                           "cantidad",
-                          "cod_factura",
                           "cod_producto",
                           "codigo",
                           "subtotal"
@@ -232,13 +218,6 @@
                     "kind": "scalar"
                   }
                 },
-                "cod_factura": {
-                  "nullable": false,
-                  "type": {
-                    "codecId": "mongo/int32@1",
-                    "kind": "scalar"
-                  }
-                },
                 "cod_producto": {
                   "nullable": false,
                   "type": {
@@ -268,7 +247,7 @@
         "kind": "mongo-database"
       }
     },
-    "storageHash": "d7d12a7f99aaac87c8c59e950061bfbec0758d47c56f2f8c93e10492384ae838"
+    "storageHash": "feac374015c3291132446b7071ecadeb0da1985255bbd42646d27f5f826685cc"
   },
   "capabilities": {},
   "extensions": {},

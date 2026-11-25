@@ -1,24 +1,22 @@
 // use prisma-8
-// millones de productos
+
 model Factura {
-  id               ObjectId @id @map("_id")
-  codigo           String   @unique
-  fecha            Date
-  cod_cliente      Int32
-  total            Double
-  descuento        Double
-  iva              Double
-  total_a_pagar    Double
+  codigo String @unique
+  fecha Date
+  cod_cliente Int32
+  total Double
+  descuento Double
+  iva Double
+  total_a_pagar Double
 
   detalles_factura DetalleFactura[]
+}
 
-  @@map("facturas")
-}
-// unos 100 productos
 type DetalleFactura {
-  codigo       Int32
-  cod_factura  Int32
+  codigo Int32
   cod_producto Int32
-  cantidad     Int32
-  subtotal     Double
+  cantidad Int32
+  subtotal Double
 }
+
+

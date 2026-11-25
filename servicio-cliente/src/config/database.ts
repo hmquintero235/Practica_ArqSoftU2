@@ -1,14 +1,14 @@
 import { Sequelize } from "sequelize";
-import dotenv from "dotenv";
+import { databaseConfig } from "./config";
 
-dotenv.config();
+const { name, username, password, host, port } = databaseConfig;
 
-export const sequelize = new Sequelize(
-    process.env.DB_NAME as string,
-    process.env.DB_USERNAME as string,
-    process.env.DB_PASSWORD,
-    {
-        host: process.env.DB_HOST,
-        dialect: "mysql"
-    }
-);
+if (!name || !username || !password) {
+    throw new Error("Revisar vairables de entorno");
+}
+
+export const sequelize = new Sequelize(name, username, password, {
+    host,
+    port,
+    dialect: "postgres"
+});

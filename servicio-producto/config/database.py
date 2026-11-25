@@ -1,20 +1,20 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-engine = create_engine (  "sqlite:///./productos.db")
+engine = create_engine("sqlite:///./producto.db")
 
-sessionLocal = sessionmaker (
+SessionLocal = sessionmaker(
     autoflush = False,
     autocommit = False,
     bind = engine
 )
+
 Base = declarative_base()
 
 def obtener_db():
-    db = sessionLocal()
+    db = SessionLocal()
     try:
         yield db
-    except:
-        print("Ocurrio un error en la captura de datos")
     finally:
         db.close()
+
